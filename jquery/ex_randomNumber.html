@@ -1,0 +1,41 @@
+<!--	filename 	: ex_randomNumber.html
+		author		: 58160673 Phakhanan Thongmee
+		created_date: 11/02/2018
+-->
+ <!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function(){
+	var first_num = 0;
+	var sec_num = 0; 
+	var res = 0;
+	var ans = 0;
+	
+	$("#rnd_num").click(function(){
+	first_num = Math.floor(Math.random() * 100) + 1;
+	sec_num = Math.floor(Math.random() * 100) + 1;
+	
+	$("#show_rnd").html(first_num+" + "+sec_num +" = ");
+	res = first_num + sec_num;
+	});
+	$("#send_ans").click(function(){
+	ans = $("#ans_num").val();
+	if(ans == res){
+		$("#result").html("<span style='color:green;'>Right Answer!!</span>");
+		}
+	else
+		$("#result").html("<span style='color:red;'>Wrong answer!!</span>");
+	});
+});
+</script>
+</head>
+<body>
+<p>Ex - Random Number for answer</p>
+<button type="button" id="rnd_num" >Random Number</button>
+<div><span id="show_rnd"></span><input type="text" id="ans_num"></div>
+<div id="result"></div>
+<button type="button" id="send_ans">Send Answer</button>
+</body>
+</html>
