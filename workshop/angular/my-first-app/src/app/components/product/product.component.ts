@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
-interface Products {  
-  id : number;  
-  name : string;  
-  price : number;
-  }
+import { UsersService } from '../../services/users.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -12,14 +7,22 @@ interface Products {
 })
 
 export class ProductComponent implements OnInit {
-  private productLists : Products[];  
-  constructor(private productsService : ProductsService) { }
+  public userLists : Users[];  
+  constructor(private usersService : UsersService) { }
 
   ngOnInit() {
-     this.productsService.getProductList().subscribe((response) => {
+     this.usersService.getUserList().subscribe((response) => {
       console.log("log :"+response);      
-      this.productLists= response; 
+      this.userLists= response; 
     });  
   }
 }
+
+interface Users {  
+  id : number;  
+  name : string;
+  username : string;  
+  email : string;
+  phone : string;
+  }
 

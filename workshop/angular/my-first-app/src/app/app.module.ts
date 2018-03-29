@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductComponent } from './components/product/product.component';
 import { FormsModule } from '@angular/forms';
-import { ProductsService } from './services/products.service';
+import { UsersService } from './services/users.service';
 import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
 const appRoutes:Routes = [  
@@ -24,7 +24,7 @@ const appRoutes:Routes = [
     HttpModule,    
     RouterModule.forRoot(appRoutes)  
   ],
-  providers: [ProductsService],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
